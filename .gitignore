@@ -53,3 +53,7 @@ Temporary Items
 *.ipch
 SmallWorld/SmallWorld.vcxproj.filters
 *.vcxproj
+*.db
+.vs/SmallWorld/v15/.suo
+*.vcxproj
+SmallWorld/SmallWorld.vcxproj.filters
