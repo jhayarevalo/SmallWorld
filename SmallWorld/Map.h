@@ -1,34 +1,45 @@
 #pragma once
 
+#include "Region.h"
 #include "Player.h"
 #include <vector>
 
 using namespace std;
 
+class Edge {
+public:
+	int r1; //Region 1
+	int r2; // Region 2
+
+	Edge(int a, int b);
+
+	Edge getInverse(); //Edges are bidirectional
+	string toString();
+};
+
 class Map {
 public:
-	bool loadMap(string fileName);
-	vector<Edge> edges;
+	vector<Edge> mapEdges;
+	vector<Region> mapRegions;
+	int numPlayers;
+	int numRegions;
+	bool isValid;
+
+
+	Map();
+	void loadMap(string fileName);
+
+	void addEdge(int a, int b);
+	void addEdge(Edge c);
+
+	void addRegion(int id);
+
+	int findRegionIndex(int rID);
+
+	void showAllEdges();
+	void showRegionConnections(int rID);
 };
 
-struct Edge {
 
-	Region *origin, *destination;
 
-	Edge(Region *o, Region *d) {
-		origin = o;
-		destination = d;
-	}
-};
-
-struct Region {
-
-	vector<Region*> connectedRegions;
-
-	int id;
-	int type;
-	Player owner;
-	int tokens;
-	bool hasMountain;
-};
 
