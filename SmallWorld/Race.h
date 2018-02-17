@@ -1,16 +1,18 @@
 #pragma once
 
-#include <string>
+#include <vector>
 
 using namespace std;
 
-class Badge
+class Race
 {
 public:
+
 	string name;
 	int tokens;
 
-	Badge();
-	Badge(string n, int t);
+	Race();
+	Race(string n, int t);
+	bool isNull();
 };
 

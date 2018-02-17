@@ -1,12 +1,13 @@
 #include "stdafx.h"
 #include "Badge.h"
 
-
 Badge::Badge()
 {
+	name = "";
+	tokens = NULL;
 }
-
-
-Badge::~Badge()
+Badge::Badge(string n, int t)
 {
+	name = n;
+	tokens = t;
 }

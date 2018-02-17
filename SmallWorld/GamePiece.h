@@ -4,13 +4,14 @@
 
 using namespace std;
 
-class Badge
+class GamePiece
 {
 public:
-	string name;
-	int tokens;
 
-	Badge();
-	Badge(string n, int t);
+	string name;
+	int regionID;
+
+	GamePiece();
+	GamePiece(string n, int rID);
 };
 
