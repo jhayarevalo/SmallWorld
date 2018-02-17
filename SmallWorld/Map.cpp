@@ -27,6 +27,7 @@ string Edge::toString() {
 Map::Map() {
 	numPlayers = 0;
 	numRegions = 0;
+	numTurns = 0;
 	isValid = false;
 }
 
@@ -57,6 +58,16 @@ void Map::loadMap(string fileName) {//Parse .map file
 					validMap = false;
 				}
 			}
+			else if (param == "TURNS:") {
+				try {
+					this->numTurns = stoi(args); //Set number of players
+					cout << "\nNumber of Turns: " << numTurns << endl;
+				}
+				catch (...) {
+					cerr << "Invalid argument for the number of turns.\n";
+					validMap = false;
+				}
+			}
 			else if (param == "REGIONS:") {
 				try {
 					this->numRegions = stoi(args); //Set number of regions
@@ -75,11 +86,11 @@ void Map::loadMap(string fileName) {//Parse .map file
 				vector<string> startRegionIDs(istream_iterator<string>{startArgs}, istream_iterator<string>());
 				cout << "Starting Regions: ";
 				for (int i = 0; i < startRegionIDs.size(); i++) {
-
 					try {
 						int regionID = stoi(startRegionIDs[i]);
 						int r = findRegionIndex(regionID);
 						this->mapRegions[r].isStart = true;//Set the region in the map as a starting region
+						this->startRegionIDs.push_back(r);
 						cout << r << " ";
 					}
 					catch (...) {

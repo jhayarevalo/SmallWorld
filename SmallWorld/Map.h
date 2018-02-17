@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Region.h"
+#include "GamePiece.h"
 #include "Player.h"
 #include <vector>
 
@@ -21,7 +22,9 @@ class Map {
 public:
 	vector<Edge> mapEdges;
 	vector<Region> mapRegions;
+	vector<int> startRegionIDs;
 	int numPlayers;
+	int numTurns;
 	int numRegions;
 	bool isValid;
 
@@ -38,6 +41,8 @@ public:
 
 	void showAllEdges();
 	void showRegionConnections(int rID);
+
+	void addGamePieceToRegion(int rID);
 };
 
 
