@@ -90,8 +90,8 @@ void Map::loadMap(string fileName) {//Parse .map file
 						int regionID = stoi(startRegionIDs[i]);
 						int r = findRegionIndex(regionID);
 						this->mapRegions[r].isStart = true;//Set the region in the map as a starting region
-						this->startRegionIDs.push_back(r);
-						cout << r << " ";
+						this->startRegionIDs.push_back(regionID);
+						cout << regionID << " ";
 					}
 					catch (...) {
 						cerr << "Invalid argument for a start region.\n";
