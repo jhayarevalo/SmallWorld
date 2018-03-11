@@ -1,28 +1,35 @@
 #pragma once
 
+#include <stack>
+
 #include "Region.h"
 #include "Dice.h"
 #include "Race.h"
 #include "Badge.h"
+#include "Coin.h"
+#include "Token.h"
 
 class Player
 {
-public:
+private:
 	int ID;
 
 	//Victory Coins
-	int coins1;
-	int coins3;
-	int coins5;
-	int coins10;
+	vector<Coin> coins1;
+	vector<Coin> coins3;
+	vector<Coin> coins5;
+	vector<Coin> coins10;
 	int victoryCoins;
 
 	//Game Tokens
-	int activeRaceTokens;
-	int declinedRaceTokens;
+	vector<Token> activeRaceTokens;
 
-	vector<int> ownedRegionIDs;
-	Dice diceFacility;
+	//Game Pieces
+	vector<GamePiece*> gamePieces;
+
+	vector<Region*> ownedRegions;
+	vector<Region*> getActiveRegions();
+	vector<Region*> getDeclinedRegions();
 
 	Race activeRace;
 	Race declinedRace;
@@ -30,18 +37,49 @@ public:
 	Badge activeBadge;
 	Badge declinedBadge;
 
+public:
+	Dice diceFacility;
+
 	Player(int pID);
 
+	void addCoin(Coin c);
+	void removeCoin(Coin c);
+
+	void placeActiveToken(Region * r);
+	void takeMapToken(Region * r);
+
+	void addActiveRaceToken(Token t);
+
 	void countVictoryCoins();
-	void giveCoins(int type, int amount);
 	void picks_race(pair<Race,Badge> racePick);
 	void displayRace();
-	void conquers(int rID);
+	void conquers(Region * r);
 	void scores();
 
 	bool operator<(const Player &other) const {
 		return victoryCoins < other.victoryCoins;
 	}
+
+	bool ownsRegion(Region * r);
+
+	//Getters
+	int getID() { return ID; }
+
+	vector<Coin> getCoins1() { return coins1; }
+	vector<Coin> getCoins3() { return coins3; }
+	vector<Coin> getCoins5() { return coins5; }
+	vector<Coin> getCoins10() { return coins10; }
+	int getVictoryCoins() { return victoryCoins; }
+
+	vector<Token> getActiveRaceTokens() { return activeRaceTokens; }
+
+	vector<Region*> getOwnedRegions() { return ownedRegions; }
+
+	Race getActiveRace() { return activeRace; }
+	Race getDeclinedRace() { return declinedRace; }
+
+	Badge getActiveBadge() { return activeBadge; }
+	Badge getDeclinedBadge() { return declinedBadge; }
 	
 };
 

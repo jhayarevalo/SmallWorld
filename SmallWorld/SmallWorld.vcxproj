@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="Badge.h" />
     <ClInclude Include="Bank.h" />
+    <ClInclude Include="Coin.h" />
     <ClInclude Include="GamePiece.h" />
     <ClInclude Include="Race.h" />
     <ClInclude Include="Dice.h" />
@@ -153,10 +154,12 @@
     <ClInclude Include="Region.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Token.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Badge.cpp" />
     <ClCompile Include="Bank.cpp" />
+    <ClCompile Include="Coin.cpp" />
     <ClCompile Include="GamePiece.cpp" />
     <ClCompile Include="Race.cpp" />
     <ClCompile Include="Dice.cpp" />
@@ -170,6 +173,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Token.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

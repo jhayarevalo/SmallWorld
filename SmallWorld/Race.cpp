@@ -20,3 +20,12 @@ bool Race::isNull(){
 		return false;
 	}
 }
+
+bool Race::equals(Race r) {
+	if (name == r.name && tokens == r.tokens) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}

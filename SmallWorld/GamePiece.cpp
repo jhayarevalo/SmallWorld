@@ -8,8 +8,9 @@ GamePiece::GamePiece()
 	regionID = NULL;
 }
 
-GamePiece::GamePiece(string n, int rID)
+GamePiece::GamePiece(string n)
 {
-	name = "";
+	name = n;
+	playerID = NULL;
 	regionID = NULL;
 }

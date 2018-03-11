@@ -9,7 +9,7 @@ using namespace std;
 
 class Bank
 {
-public:
+private:
 	vector<pair<string, int>> bankContents;
 
 	//Victory Coins
@@ -44,6 +44,7 @@ public:
 	int numWizards;
 	int numTribes;
 
+public:
 	Bank();
 	void initialize();
 	void displayBankContents();

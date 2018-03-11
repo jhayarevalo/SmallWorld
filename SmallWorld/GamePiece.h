@@ -6,12 +6,19 @@ using namespace std;
 
 class GamePiece
 {
-public:
-
+private:
 	string name;
+	int playerID;
 	int regionID;
 
+public:
 	GamePiece();
-	GamePiece(string n, int rID);
+	GamePiece(string n);
+
+	//Getters
+
+	string getName() { return name; }
+	int getPlayerID() { return playerID; }
+	int getRegionID() { return regionID; }
 };
 

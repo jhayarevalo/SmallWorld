@@ -4,7 +4,7 @@ class Dice
 {
 public:
 	int totalRolls;
-	int rollCount [4]; 
+	int rollCount[4];
 
 	Dice();
 

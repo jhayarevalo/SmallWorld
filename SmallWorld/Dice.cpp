@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <iostream>
 
 using namespace std;
@@ -17,7 +18,10 @@ Dice::Dice()
 }
 
 int Dice::roll() {
+
+	srand((unsigned)time(0));
 	int value = rand()%6;
+
 	totalRolls = totalRolls + 1;
 
 	if (value > 2) { //if random integer is greater than 2, i.e. 3,4,5
