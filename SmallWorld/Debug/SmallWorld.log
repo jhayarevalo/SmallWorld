@@ -1,4 +1,5 @@
-﻿  SmallWorld.cpp
+﻿  Token.cpp
+  SmallWorld.cpp
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(260): warning C4018: '<': signed/unsigned mismatch
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(383): warning C4018: '<': signed/unsigned mismatch
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(517): warning C4018: '<': signed/unsigned mismatch
@@ -21,7 +22,39 @@ d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1048): warning C4018: '>': signed/unsigned mismatch
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1051): warning C4018: '<': signed/unsigned mismatch
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1056): warning C4018: '<': signed/unsigned mismatch
+  Region.cpp
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\region.cpp(70): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\region.cpp(73): warning C4018: '<': signed/unsigned mismatch
+  Race.cpp
+  Player.cpp
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\player.cpp(109): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\player.cpp(123): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\player.cpp(146): warning C4018: '<': signed/unsigned mismatch
+  Map.cpp
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(87): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(111): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(135): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(162): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(221): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(231): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(238): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(247): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(258): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(272): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(273): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(292): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(300): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(311): warning C4018: '<': signed/unsigned mismatch
+  GamePiece.cpp
+  Dice.cpp
+  Coin.cpp
+  Bank.cpp
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\bank.cpp(110): warning C4018: '<': signed/unsigned mismatch
+  Badge.cpp
+  Generating Code...
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\map.cpp(226): warning C4715: 'Map::findRegionByID': not all control paths return a value
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(500): warning C4715: 'getGamePieceVector': not all control paths return a value
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(476): warning C4715: 'getTokenVector': not all control paths return a value
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(522): warning C4715: 'findPlayerByID': not all control paths return a value
+  LINK : D:\Documents\CONCORDIA\10- WINTER 2018\COMP 345\SmallWorld\Debug\SmallWorld.exe not found or not built by the last incremental link; performing full link
   SmallWorld.vcxproj -> D:\Documents\CONCORDIA\10- WINTER 2018\COMP 345\SmallWorld\Debug\SmallWorld.exe
