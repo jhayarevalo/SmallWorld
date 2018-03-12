@@ -56,6 +56,10 @@ public:
 	void conquers(Region * r);
 	void scores();
 
+	void summarySheet();
+	int getRaceBadgeBenefits();
+	void abandonRegion(Region * r);
+
 	bool operator<(const Player &other) const {
 		return victoryCoins < other.victoryCoins;
 	}

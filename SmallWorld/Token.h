@@ -17,4 +17,7 @@ public:
 	Race getRace() { return race; }
 	int getPlayerID() { return playerID; }
 	int getRegionID() { return regionID; }
+
+	void setPlayerID(int pID) { playerID = pID; }
+	void setRegionID(int rID) { regionID = rID; }
 };

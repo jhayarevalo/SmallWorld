@@ -72,7 +72,7 @@ void Player::conquers(Region * r) {
 	cout << "Player " << this->ID << " has conquered region " << r->getID() << "." << endl;
 }
 
-void Player::scores() {
+void Player::summarySheet() {
 	countVictoryCoins();
 	cout << endl << "###################################" << endl;
 	cout << "Player " << this->ID << " Summary Sheet"<< endl;
@@ -138,6 +138,7 @@ void Player::placeActiveToken(Region * r) {
 void Player::takeMapToken(Region * r) {
 	Token take(r->getTokens().front());
 	r->removeToken();
+	take.setRegionID(NULL);
 	activeRaceTokens.push_back(take);
 }
 
@@ -150,4 +151,22 @@ bool Player::ownsRegion(Region * r) {
 		}
 	}
 	return owns;
+}
+
+int Player::getRaceBadgeBenefits() {
+	cout << "Race & Badge Benefits Coming Soon!" << endl;
+	return 0;
+}
+
+void Player::abandonRegion(Region * r) {
+	for (int i = 0; i < r->getTokens().size(); i++) {
+		takeMapToken(r);
+	}
+	r->setPlayerID(NULL);
+
+	for (int j = 0; j < ownedRegions.size(); j++) {
+		if (ownedRegions[j] == r) {
+			ownedRegions.erase(ownedRegions.begin() + j);
+		}
+	}
 }
