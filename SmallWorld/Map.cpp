@@ -57,7 +57,17 @@ void Map::loadMap(string fileName) {//Parse .map file
 			string args = line.substr(colon+1);
 
 			//cout << param << " | " << args << endl; //Display contents of text file
-			if (param == "TURNS:") {
+			if (param == "PLAYERS:") {
+				try {
+					this->numPlayers = stoi(args); //Set number of players
+					cout << "\nNumber of Players: " << numPlayers << endl;
+				}
+				catch (...) {
+					cerr << "Invalid argument for the number of players.\n";
+					validMap = false;
+				}
+			}
+			else if (param == "TURNS:") {
 				try {
 					numTurns = stoi(args); //Set number of players
 					cout << "\nNumber of Turns: " << numTurns << endl;
