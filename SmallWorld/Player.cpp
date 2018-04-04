@@ -70,6 +70,7 @@ void Player::conquers(Region * r) {
 	r->setPlayerID(ID);
 	ownedRegions.push_back(r);
 	cout << "Player " << this->ID << " has conquered region " << r->getID() << "." << endl;
+	cout << "\nActive Race Tokens Remaining: " << getActiveRaceTokens().size() << endl;
 }
 
 void Player::summarySheet() {
@@ -82,7 +83,10 @@ void Player::summarySheet() {
 	cout << coins5.size() << " x 5 Coins" << endl;
 	cout << coins10.size() << " x 10 Coins" << endl << endl;
 	cout << victoryCoins << " Total Victory Coins" << endl << endl;
-	cout << ownedRegions.size() << " Owned Regions" << endl;
+	cout << ownedRegions.size() << " Owned Regions:" << endl;
+	for (int i = 0; i < ownedRegions.size(); i++) {
+		cout << "Region " << ownedRegions[i]->getID() << endl;
+	}
 	if (!activeRace.isNull()) {
 		cout << endl << "Active Race: " << activeRace.getName() << endl;
 		cout << "Active Badge: " << activeBadge.getName() << endl;
@@ -140,6 +144,15 @@ void Player::takeMapToken(Region * r) {
 	r->removeToken();
 	take.setRegionID(NULL);
 	activeRaceTokens.push_back(take);
+}
+
+void Player::takeAllMapTokens() {
+	for (int i = 0; i < ownedRegions.size(); i++) {
+		int rTokens = ownedRegions[i]->getTokens().size();//number of tokens of current region we are removing tokens from
+		for (int j = 0; j < rTokens; j++) { //Leaves at least 1 token on the region
+			takeMapToken(ownedRegions[i]);
+		}
+	}
 }
 
 bool Player::ownsRegion(Region * r) {

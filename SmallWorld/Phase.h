@@ -12,5 +12,9 @@ public:
 	~Phase();
 	void Update();
 	void display();
+	void displayConquestStatus();
+	void displayOwnedRegions();
+	void displayActiveRaceTokens();
+	void displayPlayerSummary();
 };
 

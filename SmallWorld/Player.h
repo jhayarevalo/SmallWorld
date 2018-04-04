@@ -47,6 +47,7 @@ public:
 
 	void placeActiveToken(Region * r);
 	void takeMapToken(Region * r);
+	void takeAllMapTokens();
 
 	void addActiveRaceToken(Token t);
 
