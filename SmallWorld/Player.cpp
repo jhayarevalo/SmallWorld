@@ -73,6 +73,14 @@ void Player::conquers(Region * r) {
 	cout << "\nActive Race Tokens Remaining: " << getActiveRaceTokens().size() << endl;
 }
 
+void Player::loses(Region * r) {
+	for (int j = 0; j < ownedRegions.size(); j++) {
+		if (ownedRegions[j] == r) {
+			ownedRegions.erase(ownedRegions.begin() + j);
+		}
+	}
+}
+
 void Player::summarySheet() {
 	countVictoryCoins();
 	cout << endl << "###################################" << endl;
@@ -182,4 +190,10 @@ void Player::abandonRegion(Region * r) {
 			ownedRegions.erase(ownedRegions.begin() + j);
 		}
 	}
+}
+
+string Player::displayRace() {
+	string race;
+	race += "[" + getActiveRace().getName() + " + " + getActiveBadge().getName() + "]";
+	return race;
 }

@@ -7,7 +7,7 @@ public:
 	VictoryCoinsView(Statistic *decoratedStatistic) : StatisticDecorator(decoratedStatistic) {};
 
 	string display() {
-		string toReturn = StatisticDecorator::display() + "\nVictory Coins View:";
+		string toReturn = StatisticDecorator::display() + "\n--Victory Coins View--";
 		vector<Player*> players = _subject->getAllPlayers();
 
 		for (int i = 0; i < players.size(); i++) {

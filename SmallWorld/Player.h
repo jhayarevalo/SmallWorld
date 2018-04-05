@@ -53,8 +53,9 @@ public:
 
 	void countVictoryCoins();
 	void picks_race(pair<Race,Badge> racePick);
-	void displayRace();
+	string displayRace();
 	void conquers(Region * r);
+	void loses(Region * r);
 	void scores();
 
 	void summarySheet();

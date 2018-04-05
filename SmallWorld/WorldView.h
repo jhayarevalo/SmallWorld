@@ -6,7 +6,7 @@ class WorldView : public StatisticDecorator
 public:
 	WorldView(Statistic *decoratedStatistic) : StatisticDecorator(decoratedStatistic) {};
 	string display() {
-		string toReturn = StatisticDecorator::display() + "\nDomination View:";
+		string toReturn = StatisticDecorator::display() + "\n--Domination View--";
 		Map * map = _subject->getCurrentMap();
 		vector<Player*> players = _subject->getAllPlayers();
 
