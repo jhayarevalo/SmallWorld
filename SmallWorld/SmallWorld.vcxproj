@@ -143,12 +143,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Agressive.h" />
     <ClInclude Include="Badge.h" />
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Coin.h" />
+    <ClInclude Include="DecisionMaker.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GamePiece.h" />
     <ClInclude Include="HandsView.h" />
+    <ClInclude Include="Defensive.h" />
+    <ClInclude Include="Moderate.h" />
+    <ClInclude Include="Random.h" />
+    <ClInclude Include="Strategy.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="Phase.h" />
     <ClInclude Include="Race.h" />

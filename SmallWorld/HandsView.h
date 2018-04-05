@@ -18,7 +18,7 @@ public:
 			toReturn += players[i]->displayRace();
 			toReturn += " Race Combo\n[";
 			toReturn += to_string(activeTokens);
-			toReturn += "] Active Race Tokens in Hand";
+			toReturn += "] Active Race Tokens in Hand\n";
 		}
 
 		toReturn += "\n";
