@@ -12,7 +12,7 @@ private:
 	Region * currentConquerRegion;
 	bool conquestInProcess;
 	Map * currentMap;
-
+	vector<Player*> players;
 public:
 	Game();
 	~Game();
@@ -25,6 +25,7 @@ public:
 	Region * getCurrentConquerRegion() { return currentConquerRegion; };
 	bool isConquestInProcess() { return conquestInProcess; };
 	Map * getCurrentMap() { return currentMap; };
+	vector<Player*> getAllPlayers() { return players; };
 
 	//Setters
 	void setCurrentRound(int cr);
@@ -34,4 +35,5 @@ public:
 	void setCurrentConquerRegion(Region * r);
 	void setConquestInProcess(bool tf);
 	void setCurrentMap(Map * m);
+	void setPlayers(vector<Player*> vp);
 };

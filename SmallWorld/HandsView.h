@@ -6,11 +6,8 @@ class HandsView : public StatisticDecorator
 public:
 	HandsView(Statistic *decoratedStatistic) : StatisticDecorator(decoratedStatistic) {};
 	string display() {
-		//StatisticDecorator::display();
-		// add stuff
-
-		//cout << "Hands View: TEST DECORATOR" << endl;
-		return StatisticDecorator::display() + "\nHands View TEST";
+		return StatisticDecorator::display() + "\nHands View TEST:";
+		vector<Player*> players = _subject->getAllPlayers();
 	}
 	void Update() {
 		StatisticDecorator::Update();

@@ -27,11 +27,12 @@ void Game::setPlayerTurn(int pt)
 
 void Game::setPlayerAction(int pa) {
 	playerAction = pa;
-	Notify();
+	Notify(); // for Phase Observer
 }
 
 void Game::setCurrentPlayer(Player * p) { 
 	currentPlayer = p; 
+	Notify(); // for Statistic Observer
 }
 
 void Game::setCurrentConquerRegion(Region * r) {
@@ -41,7 +42,7 @@ void Game::setCurrentConquerRegion(Region * r) {
 void Game::setConquestInProcess(bool tf) {
 	conquestInProcess = tf;
 	if (tf) {
-		Notify();
+		Notify(); // for Phase Observer
 	}
 }
 
@@ -49,4 +50,7 @@ void Game::setCurrentMap(Map * m) {
 	currentMap = m;
 }
 
+void Game::setPlayers(vector<Player*> vp) {
+	players = vp;
+}
 

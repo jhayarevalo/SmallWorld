@@ -24,8 +24,16 @@ void Statistic::Update() {
 
 string Statistic::display() {
 	//Minimum Turn Numbe
-	int turnNumber = _subject->getCurrentRound();
-	/*cout << "---GAME STATISTICS---" << endl;
-	cout << "Current Turn: " << turnNumber << endl;*/
-	return "Current Turn: " + turnNumber;
+	int currentRound = _subject->getCurrentRound();
+	Player * player = _subject->getCurrentPlayer();
+
+	string toReturn = "";
+	toReturn += "\n============================================\n";
+	toReturn += "ROUND ";
+	toReturn += to_string(currentRound);
+	toReturn += ": Player ";
+	toReturn +=	to_string(player->getID());
+	toReturn += "\n============================================\n";
+
+	return toReturn;
 }

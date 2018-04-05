@@ -32,12 +32,7 @@ void Phase::display() {
 	Map * currentMap = _subject->getCurrentMap();
 	bool conquestInProcess = _subject->isConquestInProcess();
 
-	if (playerAction == 0) {
-		cout << "\n============================================" << endl;
-		cout << "ROUND " << currentRound << ": Player " << playerTurn << endl;
-		cout << "============================================" << endl;
-	}
-	else {
+	if(playerAction > 0) {
 		cout << "\n---Player " << playerTurn << ": ";
 
 		//--- RACE RELATED ACTION ---
