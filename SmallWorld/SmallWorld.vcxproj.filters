@@ -72,6 +72,12 @@
     <ClInclude Include="WorldView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="HandsView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VictoryCoinsView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

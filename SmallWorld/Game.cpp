@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Game.h"
+#include <iostream>
 
+using namespace std;
 
 Game::Game()
 {
@@ -46,3 +48,5 @@ void Game::setConquestInProcess(bool tf) {
 void Game::setCurrentMap(Map * m) {
 	currentMap = m;
 }
+
+

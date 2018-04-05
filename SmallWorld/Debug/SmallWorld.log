@@ -1,32 +1,30 @@
-﻿  Statistic.cpp
-  Generating Code...
-  Compiling...
-  SmallWorld.cpp
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(262): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(388): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(523): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(679): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(718): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(740): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(883): warning C4018: '>=': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(896): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(905): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(932): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(992): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1013): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1035): warning C4018: '>=': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1069): warning C4018: '>=': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1071): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1098): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1102): warning C4018: '>=': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1106): warning C4018: '>=': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1124): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1136): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1147): warning C4018: '<': signed/unsigned mismatch
+﻿  SmallWorld.cpp
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\game.h(16): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\game.h(16): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(269): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(395): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(530): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(687): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(726): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(748): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(893): warning C4018: '>=': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(906): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(915): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(942): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1002): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1023): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1045): warning C4018: '>=': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1079): warning C4018: '>=': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1081): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1108): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1112): warning C4018: '>=': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1116): warning C4018: '>=': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1134): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1146): warning C4018: '<': signed/unsigned mismatch
 d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1157): warning C4018: '<': signed/unsigned mismatch
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1163): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(506): warning C4715: 'getGamePieceVector': not all control paths return a value
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(482): warning C4715: 'getTokenVector': not all control paths return a value
-d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(528): warning C4715: 'findPlayerByID': not all control paths return a value
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1167): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(1173): warning C4018: '<': signed/unsigned mismatch
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(513): warning C4715: 'getGamePieceVector': not all control paths return a value
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(489): warning C4715: 'getTokenVector': not all control paths return a value
+d:\documents\concordia\10- winter 2018\comp 345\smallworld\smallworld\smallworld.cpp(535): warning C4715: 'findPlayerByID': not all control paths return a value
   SmallWorld.vcxproj -> D:\Documents\CONCORDIA\10- WINTER 2018\COMP 345\SmallWorld\Debug\SmallWorld.exe

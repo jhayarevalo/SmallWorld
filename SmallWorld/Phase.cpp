@@ -118,8 +118,13 @@ void Phase::display() {
 			cout << "Displaying Game Bank Contents---\n";
 		}
 
-		//--- END TURN ---
+		//--- GAME STATISTICS RELATED ACTION ---
 		else if (playerAction == 10) {
+			cout << "Toggling Game Statistics---\n";
+		}
+
+		//--- END TURN ---
+		else if (playerAction == 11) {
 			cout << "Ending Turn---\n";
 			displayActiveRaceTokens();
 			displayPlayerSummary();

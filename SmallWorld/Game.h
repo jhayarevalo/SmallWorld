@@ -12,6 +12,7 @@ private:
 	Region * currentConquerRegion;
 	bool conquestInProcess;
 	Map * currentMap;
+
 public:
 	Game();
 	~Game();

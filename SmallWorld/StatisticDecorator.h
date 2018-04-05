@@ -10,8 +10,8 @@ public:
 		this->decoratedStatistic = decoratedStatistic;
 	}
 	//Provides wrapper with the Statistic interface and delegates its methods to the wrapped Statistic object
-	void display() {
-		decoratedStatistic->display();
+	string display() {
+		return decoratedStatistic->display();
 	}
 	void Update() {
 		decoratedStatistic->Update();

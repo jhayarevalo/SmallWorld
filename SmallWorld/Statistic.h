@@ -8,13 +8,12 @@ using namespace std;
 
 class Statistic : public Observer
 {
-private:
-	Game *_subject;
 public:
+	Game *_subject;
+	virtual string display();
 	Statistic();
 	Statistic(Game* s);
 	~Statistic();
 	void Update();
-	void display();
 };
 

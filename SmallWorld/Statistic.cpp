@@ -22,11 +22,10 @@ void Statistic::Update() {
 	display();
 }
 
-void Statistic::display() {
-	//Minimum Turn Number
+string Statistic::display() {
+	//Minimum Turn Numbe
 	int turnNumber = _subject->getCurrentRound();
-	cout << "============================================" << endl;
-	cout << "\t\t   GAME STATISTICS" << endl;
-	cout << "============================================" << endl;
-	cout << "Current Turn: " << turnNumber << endl;
+	/*cout << "---GAME STATISTICS---" << endl;
+	cout << "Current Turn: " << turnNumber << endl;*/
+	return "Current Turn: " + turnNumber;
 }
