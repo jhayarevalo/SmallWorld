@@ -90,7 +90,12 @@ void Phase::display() {
 		//--- ABANDONING REGION ---
 		else if (playerAction == 5) {
 			cout << "Abandoning Region---\n";
-			displayOwnedRegions();
+			if (currentPlayer->getOwnedRegions().size() > 0) {
+				displayOwnedRegions();
+			}
+			else {
+				cout << "You do not own any regions.\n";
+			}
 		}
 
 		//--- GAME STATS RELATED ACTION ---
@@ -134,14 +139,7 @@ void Phase::displayConquestStatus() {
 	Player * currentPlayer = _subject->getCurrentPlayer();
 	Region * currentConquerRegion = _subject->getCurrentConquerRegion();
 
-
-	vector<Token> * regionTokens;
-	vector<GamePiece> * regionGamePieces;
 	int conquerCost;
-
-	regionTokens = &currentConquerRegion->getTokens();
-	regionGamePieces = &currentConquerRegion->getGamePieces();
-
 	conquerCost = currentConquerRegion->getConquerCost();
 
 	//Conquering Region
