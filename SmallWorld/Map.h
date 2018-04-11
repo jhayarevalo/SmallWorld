@@ -43,6 +43,7 @@ public:
 	void showRegionConnections(int rID);
 
 	void showConquerableRegions(Region * r);
+	vector<Region*> getConquerableRegions(Region * r);
 
 	bool isConquerable(Region * r, Player * p);
 
@@ -52,6 +53,10 @@ public:
 	bool isConnectedGraph();
 
 	void showMapContents();
+
+	bool setNumAs(string element, string args);
+	bool setRegionsAs(string element, string args);
+	bool setRegionsTerrainAs(string element, string args);
 
 	//Getters
 	int getNumPlayers() { return numPlayers; }

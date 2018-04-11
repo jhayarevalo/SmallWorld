@@ -58,109 +58,49 @@ void Map::loadMap(string fileName) {//Parse .map file
 
 			//cout << param << " | " << args << endl; //Display contents of text file
 			if (param == "PLAYERS:") {
-				try {
-					this->numPlayers = stoi(args); //Set number of players
-					cout << "\nNumber of Players: " << numPlayers << endl;
-				}
-				catch (...) {
-					cerr << "Invalid argument for the number of players.\n";
-					validMap = false;
-				}
+				validMap = setNumAs("Players", args);
 			}
 			else if (param == "TURNS:") {
-				try {
-					numTurns = stoi(args); //Set number of players
-					cout << "\nNumber of Turns: " << numTurns << endl;
-				}
-				catch (...) {
-					cerr << "Invalid argument for the number of turns.\n";
-					validMap = false;
-				}
+				validMap = setNumAs("Turns", args);
 			}
 			else if (param == "REGIONS:") {
-				try {
-					this->numRegions = stoi(args); //Set number of regions
-					for (int i = 0; i < numRegions; i++) {
-						addRegion(i + 1); //Add all the regions in the game to the map
-					}
-					cout << "Number of Regions: " << numRegions << endl;
-				}
-				catch (...) {
-					cerr << "Invalid argument for the number of regions.\n";
-					validMap = false;
-				}
+				validMap = setNumAs("Regions", args);
 			}
 			else if (param == "START:") {
-				istringstream startArgs(args);
-				vector<string> startRegionIDs(istream_iterator<string>{startArgs}, istream_iterator<string>());
-				cout << "Starting Regions: ";
-				for (int i = 0; i < startRegionIDs.size(); i++) {
-					try {
-						int regionID = stoi(startRegionIDs[i]); //turn text into int
-						if (isValidRegion(regionID)) {
-							findRegionByID(regionID)->setStart(true);//Set the region in the map as a starting region
-							cout << regionID << " ";
-						}
-						else {
-							cerr << "\nA listed start region does not exist.\n";
-							validMap = false;
-							break;
-						}
-					}
-					catch (...) {
-						cerr << "Invalid argument for a start region.\n";
-						validMap = false;
-					}
-				}
-				cout << endl;
+				validMap = setRegionsAs("Start", args);
 			}
 			else if (param == "TRIBE:") {
-				istringstream tribeArgs(args);
-				vector<string> tribeRegionIDs(istream_iterator<string>{tribeArgs}, istream_iterator<string>());
-				cout << "Tribe Regions: ";
-				for (int i = 0; i < tribeRegionIDs.size(); i++) {
-					try {
-						int regionID = stoi(tribeRegionIDs[i]); //turn text into int
-						if (isValidRegion(regionID)) {
-							findRegionByID(regionID)->setTribe(true);
-							cout << regionID << " ";
-						}
-						else {
-							cerr << "\nA listed tribe region does not exist.\n";
-							validMap = false;
-							break;
-						}
-					}
-					catch (...) {
-						cerr << "Invalid argument for a tribe region.\n";
-						validMap = false;
-					}
-				}
-				cout << endl;
+				validMap = setRegionsAs("Tribe", args);
 			}
 			else if (param == "MOUNTAIN:") {
-				istringstream mountainArgs(args);
-				vector<string> mountainRegionIDs(istream_iterator<string>{mountainArgs}, istream_iterator<string>());
-				cout << "Mountain Regions: ";
-				for (int i = 0; i < mountainRegionIDs.size(); i++) {
-					try {
-						int regionID = stoi(mountainRegionIDs[i]); //turn text into int
-						if (isValidRegion(regionID)) {
-							findRegionByID(regionID)->setMountain(true);//Set the region in the map as a starting region
-							cout << regionID << " ";
-						}
-						else {
-							cerr << "\nA listed mountain region does not exist.\n";
-							validMap = false;
-							break;
-						}
-					}
-					catch (...) {
-						cerr << "Invalid argument for a mountain region.\n";
-						validMap = false;
-					}
-				}
-				cout << endl;
+				validMap = setRegionsAs("Mountain", args);
+			}
+			else if (param == "MINE:") {
+				validMap = setRegionsAs("Mine", args);
+			}
+			else if (param == "CAVERN:") {
+				validMap = setRegionsAs("Cavern", args);
+			}
+			else if (param == "MAGIC:") {
+				validMap = setRegionsAs("Magic", args);
+			}
+			else if (param == "WATER_TERRAIN:") {
+				validMap = setRegionsTerrainAs("Water", args);
+			}
+			else if (param == "FARM_TERRAIN:") {
+				validMap = setRegionsTerrainAs("Farm", args);
+			}
+			else if (param == "HILL_TERRAIN:") {
+				validMap = setRegionsTerrainAs("Hill", args);
+			}
+			else if (param == "FOREST_TERRAIN:") {
+				validMap = setRegionsTerrainAs("Forest", args);
+			}
+			else if (param == "SWAMP_TERRAIN:") {
+				validMap = setRegionsTerrainAs("Swamp", args);
+			}
+			else if (param == "MOUNTAIN_TERRAIN:") {
+				validMap = setRegionsTerrainAs("Mountain", args);
 			}
 			else if (param.length() <= 3 && validMap) {
 				try {
@@ -208,7 +148,120 @@ void Map::loadMap(string fileName) {//Parse .map file
 		validMap = false;
 	}
 }
+bool Map::setNumAs(string element, string args) {
+	bool validMap = true;
+	try {
+		if (element == "Players") {
+			this->numPlayers = stoi(args); //Set number of players
+		}
+		else if (element == "Turns") {
+			numTurns = stoi(args); //Set number of players
+		}
+		else if (element == "Regions") {
+			this->numRegions = stoi(args); //Set number of regions
+			for (int i = 0; i < numRegions; i++) {
+				addRegion(i + 1); //Add all the regions in the game to the map
+			}
+		}
+		cout << "Number of " << element << ": " << stoi(args) << endl;
+	}
+	catch (...) {
+		cerr << "Invalid argument for the Number of " << element << ".\n";
+		validMap = false;
+	}
+	return validMap;
+}
 
+bool Map::setRegionsAs(string element, string args) {
+	bool validMap = true;
+
+	istringstream elementArgs(args);
+	vector<string> elementRegionIDs(istream_iterator<string>{elementArgs}, istream_iterator<string>());
+	cout << element << " Regions: ";
+	for (int i = 0; i < elementRegionIDs.size(); i++) {
+		try {
+			int regionID = stoi(elementRegionIDs[i]); //turn text into int
+			if (isValidRegion(regionID)) {
+				if (element == "Start") {
+					findRegionByID(regionID)->setStart(true);//Set the region in the map as a start region
+				}
+				else if (element == "Tribe") {
+					findRegionByID(regionID)->setTribe(true);//Set the region in the map as a tribe region
+				}
+				else if (element == "Mountain") {
+					findRegionByID(regionID)->setMountain(true);//Set the region in the map as a mountain region
+				}
+				else if (element == "Mine") {
+					findRegionByID(regionID)->setMine(true);//Set the region in the map as a mine region
+				}
+				else if (element == "Cavern") {
+					findRegionByID(regionID)->setCavern(true);//Set the region in the map as a cavern region
+				}
+				else if (element == "Magic") {
+					findRegionByID(regionID)->setMagic(true);//Set the region in the map as a magic region
+				}
+				cout << regionID << " ";
+			}
+			else {
+				cerr << "\nA listed "<< element <<" Region does not exist.\n";
+				validMap = false;
+				break;
+			}
+		}
+		catch (...) {
+			cerr << "Invalid argument for a " << element << " Region.\n";
+			validMap = false;
+		}
+	}
+	cout << endl;
+
+	return validMap;
+}
+bool Map::setRegionsTerrainAs(string element, string args) {
+	bool validMap = true;
+
+	istringstream elementArgs(args);
+	vector<string> elementRegionIDs(istream_iterator<string>{elementArgs}, istream_iterator<string>());
+	cout << element << " Terrain Regions: ";
+	for (int i = 0; i < elementRegionIDs.size(); i++) {
+		try {
+			int regionID = stoi(elementRegionIDs[i]); //turn text into int
+			if (isValidRegion(regionID)) {
+				if (element == "Water") {
+					findRegionByID(regionID)->setTerrain('w');//Set the region in the map as a water terrain region
+				}
+				else if (element == "Farm") {
+					findRegionByID(regionID)->setTerrain('f');//Set the region in the map as a farm terrain region
+				}
+				else if (element == "Hill") {
+					findRegionByID(regionID)->setTerrain('h');//Set the region in the map as a hill terrain region
+				}
+				else if (element == "Forest") {
+					findRegionByID(regionID)->setTerrain('t');//Set the region in the map as a forest terrain region
+				}
+				else if (element == "Swamp") {
+					findRegionByID(regionID)->setTerrain('s');//Set the region in the map as a swamp terrain region
+				}
+				else if (element == "Mountain") {
+					findRegionByID(regionID)->setTerrain('m');//Set the region in the map as a mountain terrain region
+				}
+				cout << regionID << " ";
+			}
+			else {
+				cerr << "\nA listed " << element << " Region does not exist.\n";
+				validMap = false;
+				break;
+			}
+		}
+		catch (...) {
+			cerr << "Invalid argument for a " << element << " Region.\n";
+			validMap = false;
+		}
+	}
+	cout << endl;
+
+	return validMap;
+}
 void Map::addEdge(int a, int b) {
 
 	Edge connection(a, b);
@@ -314,6 +367,19 @@ void Map::showConquerableRegions(Region * r) {
 			cout << endl;
 		}
 	}
+}
+
+vector<Region*> Map::getConquerableRegions(Region * r) {
+	vector<Region*> connectedRegions;
+
+	for (int i = 0; i < mapEdges.size(); i++) {
+		if (mapEdges[i].r1 == r->getID()) {
+			Region * r2 = findRegionByID(mapEdges[i].r2);
+			connectedRegions.push_back(r2);
+		}
+	}
+
+	return connectedRegions;
 }
 
 bool Map::isConquerable(Region * r, Player * p) {
