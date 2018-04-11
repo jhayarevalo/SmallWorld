@@ -8,11 +8,13 @@
 #include "Badge.h"
 #include "Coin.h"
 #include "Token.h"
+#include "Strategy.h"
 
 class Player
 {
 private:
 	int ID;
+	Strategy * strategy;
 
 	//Victory Coins
 	vector<Coin> coins1;
@@ -23,6 +25,7 @@ private:
 
 	//Game Tokens
 	vector<Token> activeRaceTokens;
+	vector<Token> declinedRaceTokens;
 
 	//Game Pieces
 	vector<GamePiece*> gamePieces;
@@ -41,6 +44,7 @@ public:
 	Dice diceFacility;
 
 	Player(int pID);
+	Player(int pID, Strategy *initS);
 
 	void addCoin(Coin c);
 	void removeCoin(Coin c);
@@ -50,13 +54,20 @@ public:
 	void takeAllMapTokens();
 
 	void addActiveRaceToken(Token t);
+	void addDeclinedRaceToken(Token t);
+
+	//Assignment Required Functions
+	void picks_race(pair<Race, Badge> racePick);
+	void conquers(Region * r);
+	void scores();
+
+	//Strategy
+	char executePicksRace(vector<Player*> players);
+	int executeConquers(vector<Region*> conquerableRegions);
 
 	void countVictoryCoins();
-	void picks_race(pair<Race,Badge> racePick);
 	string displayRace();
-	void conquers(Region * r);
 	void loses(Region * r);
-	void scores();
 
 	void summarySheet();
 	int getRaceBadgeBenefits();
@@ -86,6 +97,12 @@ public:
 
 	Badge getActiveBadge() { return activeBadge; }
 	Badge getDeclinedBadge() { return declinedBadge; }
+
+	Strategy * getStrategy() { return strategy; }
 	
+	//Setter
+	void setStrategy(Strategy *newStrategy) {
+		strategy = newStrategy;
+	}
 };
 

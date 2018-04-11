@@ -2,13 +2,21 @@
 #include "Player.h"
 
 #include <iostream>
-
+#include <vector>
 using namespace std;
 
 Player::Player(int pID)
 {
 	ID = pID;
 	countVictoryCoins();
+	strategy = NULL;
+}
+
+Player::Player(int pID, Strategy *initStrategy)
+{
+	ID = pID;
+	countVictoryCoins();
+	strategy = initStrategy;
 }
 
 void Player::addCoin(Coin c) {
@@ -114,6 +122,12 @@ void Player::addActiveRaceToken(Token t) {
 	activeRaceTokens.push_back(Token(r,ID,NULL));//region is null because it returns to player hand
 }
 
+void Player::addDeclinedRaceToken(Token t) {
+	Race r = t.getRace();
+	declinedRaceTokens.push_back(Token(r, ID, NULL));//region is null because it returns to player hand
+	activeRaceTokens.pop_back();
+}
+
 vector<Region*> Player::getActiveRegions() {
 
 	vector<Region*> activeRegions;
@@ -180,7 +194,7 @@ int Player::getRaceBadgeBenefits() {
 }
 
 void Player::abandonRegion(Region * r) {
-	for (int i = 0; i < r->getTokens().size(); i++) {
+	while (r->getTokens().size() != 0) {
 		takeMapToken(r);
 	}
 	r->setPlayerID(NULL);
@@ -197,3 +211,13 @@ string Player::displayRace() {
 	race += "[" + getActiveRace().getName() + " + " + getActiveBadge().getName() + "]";
 	return race;
 }
+
+char Player::executePicksRace(vector<Player*> players) {
+	Player * thisPlayer = this;
+	return this->strategy->executePicksRace(thisPlayer, players);
+}
+
+int Player::executeConquers(vector<Region*> conquerableRegions) {
+	return this->strategy->executeConquers(conquerableRegions, getID());
+}
+

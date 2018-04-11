@@ -1,9 +1,15 @@
 #pragma once
-#include "Player.h"
+class Player;
 
-class Strategy : public Player {
+class Strategy {
 public:
-	virtual void picksRace(pair<Race, Badge> racePick) = 0;
-	virtual void conquers(Region * r);
-	virtual void scores();
+	~Strategy() {};
+	virtual char executePicksRace(Player * thisPlayer, vector<Player*> players) {
+		return 0;
+	};
+	virtual int executeConquers(vector<Region*> conquerableRegions, int playerID) {
+		return 0;
+	};
+protected:
+	Strategy() {};
 };
