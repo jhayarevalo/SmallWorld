@@ -145,7 +145,6 @@
   <ItemGroup>
     <ClInclude Include="Agressive.h" />
     <ClInclude Include="Badge.h" />
-    <ClInclude Include="Bank.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GamePiece.h" />
@@ -172,7 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Badge.cpp" />
-    <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GamePiece.cpp" />
@@ -193,6 +191,9 @@
     </ClCompile>
     <ClCompile Include="Subject.cpp" />
     <ClCompile Include="Token.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
