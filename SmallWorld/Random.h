@@ -22,13 +22,13 @@ public:
 	};
 
 	//Chooses random region to conquer
-	int executeConquers(vector<Region*> conquerableRegions, int playerID) {
+	int executeConquers(vector<Region*> conquerableRegions, Player *thisPlayer) {
 		srand((unsigned)time(0));
 		int value;
 
 		do {
 			value = rand() % conquerableRegions.size();
-		} while (conquerableRegions[value]->getPlayerID() == playerID);
+		} while (conquerableRegions[value]->getPlayerID() == thisPlayer->getID());
 
 		return conquerableRegions[value]->getID();
 	};

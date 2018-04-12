@@ -15,10 +15,15 @@ public:
 	GamePiece();
 	GamePiece(string n);
 
-	//Getters
+	void display();
 
+	//Getters
 	string getName() { return name; }
 	int getPlayerID() { return playerID; }
 	int getRegionID() { return regionID; }
+
+	//Setters
+	void setPlayerID(int pID) { playerID = pID; }
+	void setRegionID(int rID) { regionID = rID; }
 };
 

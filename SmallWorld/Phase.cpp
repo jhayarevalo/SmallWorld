@@ -140,7 +140,7 @@ void Phase::displayConquestStatus() {
 	Region * currentConquerRegion = _subject->getCurrentConquerRegion();
 
 	int conquerCost;
-	conquerCost = currentConquerRegion->getConquerCost();
+	conquerCost = currentConquerRegion->getConquerCost(currentPlayer->getActiveRace(), currentPlayer->getActiveBadge());
 
 	//Conquering Region
 	if (currentConquerRegion->getPlayerID() == currentPlayer->getID()) {
@@ -165,11 +165,22 @@ void Phase::displayConquestStatus() {
 
 void Phase::displayOwnedRegions() {
 	Player * currentPlayer = _subject->getCurrentPlayer();
+	vector<Region*> activeRegions = currentPlayer->getActiveRegions();
 
-	cout << "Here is a summary of your conquests.\n\nOwned Regions:" << endl;
-	for (int r = 0; r < currentPlayer->getOwnedRegions().size(); r++) {
-		currentPlayer->getOwnedRegions()[r]->displayContentsInline();
+	cout << "Here is a summary of your conquests.\n\nActive Regions:" << endl;
+	for (int r = 0; r < activeRegions.size(); r++) {
+		activeRegions[r]->displayContentsInline();
 		cout << endl;
+	}
+	
+	if (!(currentPlayer->getDeclinedRace().isNull())) {
+		vector<Region*> declinedRegions = currentPlayer->getDeclinedRegions();
+
+		cout << "\n\nDeclined Regions:" << endl;
+		for (int r = 0; r < declinedRegions.size(); r++) {
+			declinedRegions[r]->displayContentsInline();
+			cout << endl;
+		}
 	}
 }
 

@@ -147,7 +147,6 @@
     <ClInclude Include="Badge.h" />
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Coin.h" />
-    <ClInclude Include="DecisionMaker.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GamePiece.h" />
     <ClInclude Include="HandsView.h" />

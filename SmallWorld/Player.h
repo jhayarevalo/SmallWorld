@@ -25,14 +25,11 @@ private:
 
 	//Game Tokens
 	vector<Token> activeRaceTokens;
-	vector<Token> declinedRaceTokens;
 
 	//Game Pieces
-	vector<GamePiece*> gamePieces;
+	vector<GamePiece> gamePieces;
 
 	vector<Region*> ownedRegions;
-	vector<Region*> getActiveRegions();
-	vector<Region*> getDeclinedRegions();
 
 	Race activeRace;
 	Race declinedRace;
@@ -54,7 +51,10 @@ public:
 	void takeAllMapTokens();
 
 	void addActiveRaceToken(Token t);
-	void addDeclinedRaceToken(Token t);
+
+	void placeGamePiece(string n, Region * r);
+	void addGamePiece(GamePiece g);
+	void removeGamePieces(string n);
 
 	//Assignment Required Functions
 	void picks_race(pair<Race, Badge> racePick);
@@ -79,6 +79,9 @@ public:
 
 	bool ownsRegion(Region * r);
 
+	void placeGamePieceInRegion(string n, Region * r);
+	void emptyActiveRaceTokens();
+
 	//Getters
 	int getID() { return ID; }
 
@@ -91,6 +94,8 @@ public:
 	vector<Token> getActiveRaceTokens() { return activeRaceTokens; }
 
 	vector<Region*> getOwnedRegions() { return ownedRegions; }
+	vector<Region*> getActiveRegions();
+	vector<Region*> getDeclinedRegions();
 
 	Race getActiveRace() { return activeRace; }
 	Race getDeclinedRace() { return declinedRace; }

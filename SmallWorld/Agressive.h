@@ -17,17 +17,17 @@ public:
 	};
 
 	//Always takes the first available cheapest region
-	int executeConquers(vector<Region*> conquerableRegions, int playerID) {
+	int executeConquers(vector<Region*> conquerableRegions, Player * thisPlayer) {
 		Region * cheapestRegion = NULL;
 		int cheapestCost;
 
 		for (int i = 0; i < conquerableRegions.size(); i++) {
 			//Only check for regions unowned by the player
-			if (conquerableRegions[i]->getPlayerID() != playerID) {
+			if (conquerableRegions[i]->getPlayerID() != thisPlayer->getID()) {
 				//Choose cheapest unowned region
-				if (cheapestRegion == NULL || conquerableRegions[i]->getConquerCost() < cheapestCost) {
+				if (cheapestRegion == NULL || conquerableRegions[i]->getConquerCost(thisPlayer->getActiveRace(), thisPlayer->getActiveBadge()) < cheapestCost) {
 					cheapestRegion = conquerableRegions[i];
-					cheapestCost = conquerableRegions[i]->getConquerCost();
+					cheapestCost = conquerableRegions[i]->getConquerCost(thisPlayer->getActiveRace(), thisPlayer->getActiveBadge());
 				}
 			}
 		}

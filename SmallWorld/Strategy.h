@@ -7,7 +7,7 @@ public:
 	virtual char executePicksRace(Player * thisPlayer, vector<Player*> players) {
 		return 0;
 	};
-	virtual int executeConquers(vector<Region*> conquerableRegions, int playerID) {
+	virtual int executeConquers(vector<Region*> conquerableRegions, Player * thisPlayer) {
 		return 0;
 	};
 protected:

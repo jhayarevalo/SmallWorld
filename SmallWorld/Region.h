@@ -4,6 +4,7 @@
 
 #include "GamePiece.h"
 #include "Token.h"
+#include "Badge.h"
 
 using namespace std;
 
@@ -28,10 +29,15 @@ public:
 
 	void addGamePiece(GamePiece gp);
 	void addToken(Token tk);
+	vector<GamePiece> removeGamePieces(int pID);
 	void removeToken();
 	void displayContents();
 	void displayContentsInline();
-	int getConquerCost();
+	int getConquerCost(Race r, Badge b);
+
+	bool hasGamePiece(string name);
+
+	string getTerrainName();
 
 	//Getters
 	int getID() { return ID; }

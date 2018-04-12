@@ -12,9 +12,9 @@ public:
 			if (players[i]->getID() != thisPlayer->getID()) {
 				for (int j = 0; j < players[i]->getOwnedRegions().size(); j++) {
 					//Choose cheapest region owned by another player
-					if (cheapestRegion == NULL || players[i]->getOwnedRegions()[j]->getConquerCost() < cheapestCost) {
+					if (cheapestRegion == NULL || players[i]->getOwnedRegions()[j]->getConquerCost(thisPlayer->getActiveRace(), thisPlayer->getActiveBadge()) < cheapestCost) {
 						cheapestRegion = players[i]->getOwnedRegions()[j];
-						cheapestCost = players[i]->getOwnedRegions()[j]->getConquerCost();
+						cheapestCost = players[i]->getOwnedRegions()[j]->getConquerCost(thisPlayer->getActiveRace(), thisPlayer->getActiveBadge());
 					}
 				}
 			}
@@ -31,17 +31,17 @@ public:
 	};
 
 	//Always picks cheapest region owned by a player
-	int executeConquers(vector<Region*> conquerableRegions, int playerID) {
+	int executeConquers(vector<Region*> conquerableRegions, Player * thisPlayer) {
 		Region * cheapestRegion = NULL;
 		int cheapestCost;
 
 		for (int i = 0; i < conquerableRegions.size(); i++) {
 			//Only checks conquerable regions that are owned by other players
-			if (conquerableRegions[i]->getPlayerID() != NULL && conquerableRegions[i]->getPlayerID() != playerID) {
+			if (conquerableRegions[i]->getPlayerID() != NULL && conquerableRegions[i]->getPlayerID() != thisPlayer->getID()) {
 				//Choose cheapest region owned by another player
-				if (cheapestRegion == NULL || conquerableRegions[i]->getConquerCost() < cheapestCost) {
+				if (cheapestRegion == NULL || conquerableRegions[i]->getConquerCost(thisPlayer->getActiveRace(), thisPlayer->getActiveBadge()) < cheapestCost) {
 					cheapestRegion = conquerableRegions[i];
-					cheapestCost = conquerableRegions[i]->getConquerCost();
+					cheapestCost = conquerableRegions[i]->getConquerCost(thisPlayer->getActiveRace(), thisPlayer->getActiveBadge());
 				}
 			}
 		}
@@ -49,11 +49,11 @@ public:
 		if (cheapestRegion == NULL) {
 			for (int i = 0; i < conquerableRegions.size(); i++) {
 				//Only check for regions unowned by the player
-				if (conquerableRegions[i]->getPlayerID() != playerID) {
+				if (conquerableRegions[i]->getPlayerID() != thisPlayer->getID()) {
 					//Get cheapest empty region
-					if (cheapestRegion == NULL || conquerableRegions[i]->getConquerCost() < cheapestCost) {
+					if (cheapestRegion == NULL || conquerableRegions[i]->getConquerCost(thisPlayer->getActiveRace(), thisPlayer->getActiveBadge()) < cheapestCost) {
 						cheapestRegion = conquerableRegions[i];
-						cheapestCost = conquerableRegions[i]->getConquerCost();
+						cheapestCost = conquerableRegions[i]->getConquerCost(thisPlayer->getActiveRace(), thisPlayer->getActiveBadge());
 					}
 				}
 			}
