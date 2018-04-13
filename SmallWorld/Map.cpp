@@ -5,9 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <cstddef>
 #include <iterator>
-#include <algorithm>
 
 using namespace std;
 

@@ -1,175 +1,228 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Aggressive" Collapsed="true">
-    <Position X="0.75" Y="7.75" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Aggressive">
+    <Position X="16.25" Y="3.25" Width="5.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAEAAAAAAEAAgAAAAAAAA=</HashCode>
       <FileName>Agressive.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Badge" Collapsed="true">
-    <Position X="10" Y="0.5" Width="1.5" />
+  <Class Name="Badge">
+    <Position X="18.75" Y="13.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAEAAAAIAAAAAAAAAAAEAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Badge.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Bank" Collapsed="true">
-    <Position X="11.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AQAEAAAAgGhAAAAgkAFigEEAAAIQABIAiAAAQAAACgE=</HashCode>
-      <FileName>Bank.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Coin" Collapsed="true">
-    <Position X="13.5" Y="0.5" Width="1.5" />
+  <Class Name="Coin">
+    <Position X="11" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAAAABAAAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Coin.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Game" Collapsed="true">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+  <Class Name="Game">
+    <Position X="1" Y="3.75" Width="3" />
+    <AssociationLine Name="currentPlayer" Type="Player" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="9" />
+        <Point X="9.146" Y="9" />
+        <Point X="9.146" Y="14.75" />
+        <Point X="13.25" Y="14.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="currentConquerRegion" Type="Region" FixedFromPoint="true">
+      <Path>
+        <Point X="4" Y="8.375" />
+        <Point X="12" Y="8.375" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>BEAKAQgQAQAQQAAACIAAYgAgIAiQgACAIIAIAAABAAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currentMap" />
+      <Field Name="currentPlayer" />
+      <Field Name="currentConquerRegion" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="GamePiece" Collapsed="true">
-    <Position X="11.75" Y="1.5" Width="1.5" />
+  <Class Name="GamePiece">
+    <Position X="16.25" Y="6.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgQCAACAAAAAAAAAAAAAEEBgAAAAAEAABAAAA=</HashCode>
       <FileName>GamePiece.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HandsView" Collapsed="true">
-    <Position X="3" Y="4.75" Width="1.5" />
+  <Class Name="HandsView">
+    <Position X="0.75" Y="18.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>HandsView.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Defensive" Collapsed="true">
-    <Position X="3" Y="7.75" Width="1.5" />
+  <Class Name="Defensive">
+    <Position X="21.75" Y="3.25" Width="5.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Defensive.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Moderate" Collapsed="true">
-    <Position X="5.25" Y="7.75" Width="1.5" />
+  <Class Name="Moderate">
+    <Position X="27.25" Y="3.25" Width="4.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Moderate.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Random" Collapsed="true">
-    <Position X="7.5" Y="7.75" Width="1.5" />
+  <Class Name="Random">
+    <Position X="32.25" Y="3.25" Width="5.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Random.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Strategy" Collapsed="true">
-    <Position X="4" Y="6.5" Width="1.5" />
+  <Class Name="Strategy">
+    <Position X="23.5" Y="0.5" Width="5.25" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAABAAAAA=</HashCode>
       <FileName>Strategy.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Observer" Collapsed="true">
-    <Position X="4" Y="0.5" Width="1.5" />
+  <Class Name="Observer">
+    <Position X="3.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Observer.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Phase" Collapsed="true">
-    <Position X="0.75" Y="1.75" Width="1.5" />
+  <Class Name="Phase">
+    <Position X="1" Y="12.75" Width="2.5" />
+    <AssociationLine Name="_subject" Type="Game" FixedFromPoint="true">
+      <Path>
+        <Point X="1.438" Y="12.75" />
+        <Point X="1.438" Y="9.473" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAQAAQAAAAAAAAAAAAAEAAAEACEAAAAQAAAAQAAABAA=</HashCode>
       <FileName>Phase.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_subject" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Race" Collapsed="true">
-    <Position X="10" Y="2.5" Width="1.5" />
+  <Class Name="Race">
+    <Position X="18.75" Y="10.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>QAEAAAAAAAGAAAAAAAAAAAAAAAAEAAAAAAAECAAAAAA=</HashCode>
       <FileName>Race.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Dice" Collapsed="true">
-    <Position X="15.25" Y="0.5" Width="1.5" />
+  <Class Name="Dice">
+    <Position X="18.75" Y="16.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAAAAAgAAAAAAAAAAAAQAGAAAA=</HashCode>
       <FileName>Dice.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Edge" Collapsed="true">
-    <Position X="10" Y="1.5" Width="1.5" />
+  <Class Name="Edge">
+    <Position X="5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAACAAAAAAAAABAAAQAAABAAAIAAAAAAAAAA=</HashCode>
       <FileName>Map.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Map" Collapsed="true">
-    <Position X="13.5" Y="1.5" Width="1.5" />
+  <Class Name="Map">
+    <Position X="7.5" Y="0.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>wMAiAAYAABAICIAAAQAAgEAAgAgBQCgCBQAAAAACQBQ=</HashCode>
       <FileName>Map.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Player" Collapsed="true">
-    <Position X="15.25" Y="1.5" Width="1.5" />
+  <Class Name="Player">
+    <Position X="13.25" Y="10.75" Width="4" />
+    <AssociationLine Name="strategy" Type="Strategy" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.25" Y="20.125" />
+        <Point X="25.062" Y="20.125" />
+        <Point X="25.062" Y="6.212" />
+        <Point X="38.114" Y="6.212" />
+        <Point X="38.114" Y="1.438" />
+        <Point X="28.75" Y="1.438" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>mBBCCAAECAAAiACoBAALQDBAMBiDEIJIgQggFZgAAIg=</HashCode>
       <FileName>Player.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="strategy" />
+      <Field Name="diceFacility" />
+      <Field Name="declinedRace" />
+      <Field Name="declinedBadge" />
+      <Field Name="activeRace" />
+      <Field Name="activeBadge" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Region" Collapsed="true">
-    <Position X="11.75" Y="2.5" Width="1.5" />
+  <Class Name="Region">
+    <Position X="12" Y="0.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAEgAABigzcEgAagAgIAATAACAABAgDQAAAAAABAKBQ=</HashCode>
       <FileName>Region.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Statistic" Collapsed="true">
-    <Position X="5.25" Y="1.75" Width="1.5" />
+  <Class Name="Statistic">
+    <Position X="5.25" Y="12.75" Width="1.75" />
+    <AssociationLine Name="_subject" Type="Game" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.312" Y="12.75" />
+        <Point X="6.312" Y="9.848" />
+        <Point X="3.5" Y="9.848" />
+        <Point X="3.5" Y="9.473" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAgAAAAACEAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Statistic.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_subject" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="StatisticDecorator" Collapsed="true">
-    <Position X="5.25" Y="3.25" Width="1.5" />
+  <Class Name="StatisticDecorator">
+    <Position X="4.5" Y="15.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAQAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>StatisticDecorator.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Subject" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+  <Class Name="Subject">
+    <Position X="1.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAQAAAAAAAAAIAAIAAAAAAAIAAAABAAAAAAAQAAAA=</HashCode>
       <FileName>Subject.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Token" Collapsed="true">
-    <Position X="13.5" Y="2.5" Width="1.5" />
+  <Class Name="Token">
+    <Position X="21.75" Y="10.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAEAgQCBAAAAAAAAAAAAAAAAABgAAAAAAAABBAAA=</HashCode>
       <FileName>Token.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="race" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="VictoryCoinsView" Collapsed="true">
-    <Position X="5.25" Y="4.75" Width="1.5" />
+  <Class Name="VictoryCoinsView">
+    <Position X="4.5" Y="18.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAACAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>VictoryCoinsView.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WorldView" Collapsed="true">
-    <Position X="7.5" Y="4.75" Width="1.5" />
+  <Class Name="WorldView">
+    <Position X="8.5" Y="18.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AEQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WorldView.h</FileName>
